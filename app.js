@@ -5,6 +5,7 @@ const app = express();
 const router = express.Router();
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 router.post("/api/test_web_hooks", function(req, res) {
   console.log(req.body);
