@@ -8,12 +8,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 router.post("/api/test_web_hooks", function(req, res) {
-  console.log(req.body);
+  console.log("Post request => ", req.body);
   res.sendStatus(200);
 });
 
 router.get("/api/:id", function(req, res) {
-  console.log(req.params);
+  console.log("Test connection=> ", req.params);
   res.sendStatus(200);
 });
 app.use(router);
