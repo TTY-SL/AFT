@@ -10,7 +10,7 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
+    "Origin, X-Requested-With, Content-Type, Accept",
   );
   next();
 });
@@ -25,4 +25,4 @@ router.get("/api/:id", function(req, res) {
   res.sendStatus(200);
 });
 app.use(router);
-app.listen(3000, () => console.log("http://localhost:3000"));
+app.listen(80, () => console.log("http://localhost:80"));
