@@ -30,4 +30,6 @@ router.get("/", function(req, res) {
   res.send("Hello");
 });
 app.use(router);
-app.listen(3000, () => console.log("http://localhost:3000"));
+app.listen(process.env.PORT || 3000, () =>
+  console.log("http://localhost:3000")
+);
