@@ -25,11 +25,9 @@ router.get("/api/:id", function(req, res) {
   res.sendStatus(200);
 });
 router.get("/", function(req, res) {
-  console.log("Test connection=> ", req.params);
-  res.sendStatus(200);
-  res.send("Hello");
+  res.status(200).send("Hellow");
 });
 app.use(router);
 app.listen(process.env.PORT || 3000, () =>
-  console.log("http://localhost:3000")
+  console.log("http://localhost:" + (process.env.PORT || 3000))
 );
