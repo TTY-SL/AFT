@@ -20,6 +20,11 @@ router.post("/api/test_web_hooks", function(req, res) {
   res.sendStatus(200);
 });
 
+router.post("/simevents", function(req, res) {
+  console.log("Post request => ", req.body);
+  res.sendStatus(200);
+});
+
 router.get("/api/:id", function(req, res) {
   console.log("Test connection=> ", req.params);
   res.sendStatus(200);
