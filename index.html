@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Websocket</h1>
+    <ul id="web_socket"></ul>
+  </body>
+  <script>
+    var ws = new WebSocket((location.protocol == "https:" ? "wss://" : "ws://") + location.host);
+    ws.onopen = function(r) {};
+    ws.onmessage = function(r) {
+      var d = JSON.parse(r.data);
+      var dWS = document.getElementById("web_socket");
+      var node = document.createElement("LI");
+      var nodeS1 = document.createElement("div");
+      var nodeS2 = document.createElement("div");
+      var uri = document.createTextNode(d.uri);
+      var data = document.createTextNode(d.data);
+      nodeS1.appendChild(uri);
+      nodeS2.appendChild(data);
+      node.appendChild(nodeS1);
+      node.appendChild(nodeS2);
+      dWS.appendChild(node);
+    };
+  </script>
+</html>
