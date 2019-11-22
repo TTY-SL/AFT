@@ -15,11 +15,16 @@
   </body>
   <script>
     var parentNode = document.getElementById("web_socket");
-
+    function callPing(ws) {
+      setInterval(() => ws.send(JSON.stringify({ type: "ping" })), 15000);
+    }
     var ws = new WebSocket((location.protocol == "https:" ? "wss://" : "ws://") + location.host);
-    ws.onopen = function(r) {};
+    ws.onopen = function(r) {
+      callPing(ws);
+    };
     ws.onmessage = function(r) {
       var d = JSON.parse(r.data);
+      if (d.type == "pong") return;
       var continer = document.createElement("div");
       continer.classList.add("ws-request");
 
