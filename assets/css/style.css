@@ -11,6 +11,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .ws-wrapper {
   min-width: 90%;
@@ -19,6 +20,7 @@ h1 {
   height: 80vh;
   padding: 5px;
   flex: 0;
+  overflow-y: scroll;
 }
 .ws-request {
   margin-top: 5px;
