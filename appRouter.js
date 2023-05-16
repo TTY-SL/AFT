@@ -30,7 +30,7 @@ router.get("/api/:id", function (req, res) {
   res.sendStatus(200);
 });
 router.get("/", function (req, res) {
-  res.status(200).send("Hellow");
+  res.status(200).send("Hellow, open url /websocket");
 });
 router.get("/websocket", function (req, res) {
   res.sendFile("/index.html", {
